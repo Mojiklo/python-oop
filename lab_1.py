@@ -5,8 +5,10 @@ class AbstractEntity:
     def __init__(self, identifier: int, name: str):
         """
         Создание и подготовка к работе абстрактного объекта.
+        
         :param identifier: Уникальный идентификатор объекта
         :param name: Имя объекта
+        
         Примеры:
         >>> entity = AbstractEntity(1, "Object1")  # инициализация экземпляра класса
         """
@@ -23,7 +25,9 @@ class AbstractEntity:
     def get_description(self) -> str:
         """
         Получение описания объекта.
+        
         :return: Описание объекта
+        
         Примеры:
         >>> entity = AbstractEntity(1, "Object1")
         >>> entity.get_description()
@@ -34,8 +38,10 @@ class AbstractEntity:
     def update_name(self, new_name: str) -> None:
         """
         Обновление имени объекта.
+        
         :param new_name: Новое имя объекта
         :raise ValueError: Если новое имя объекта пустое, вызываем ошибку
+        
         Примеры:
         >>> entity = AbstractEntity(1, "Object1")
         >>> entity.update_name("NewObject")
@@ -45,6 +51,7 @@ class AbstractEntity:
     def generate_report(self) -> None:
         """
         Генерация отчета о состоянии объекта.
+        
         Примеры:
         >>> entity = AbstractEntity(1, "Object1")
         >>> entity.generate_report()
@@ -56,9 +63,11 @@ class PhysicalObject(AbstractEntity):
     def __init__(self, identifier: int, name: str, weight: float):
         """
         Создание и подготовка к работе физического объекта.
+        
         :param identifier: Уникальный идентификатор объекта
         :param name: Имя объекта
         :param weight: Вес объекта
+        
         Примеры:
         >>> physical_object = PhysicalObject(2, "Box", 10.5)  # инициализация экземпляра класса
         """
@@ -73,8 +82,10 @@ class PhysicalObject(AbstractEntity):
     def move_object(self, destination: str) -> None:
         """
         Перемещение физического объекта.
+        
         :param destination: Место, куда перемещается объект
         :raise ValueError: Если место назначения пустое, вызываем ошибку
+        
         Примеры:
         >>> physical_object = PhysicalObject(2, "Box", 10.5)
         >>> physical_object.move_object("Storage Room")
@@ -84,7 +95,9 @@ class PhysicalObject(AbstractEntity):
     def measure_weight(self) -> float:
         """
         Измерение веса физического объекта.
+        
         :return: Вес объекта
+        
         Примеры:
         >>> physical_object = PhysicalObject(2, "Box", 10.5)
         >>> physical_object.measure_weight()
@@ -97,9 +110,11 @@ class DigitalEntity(AbstractEntity):
     def __init__(self, identifier: int, name: str, version: str):
         """
         Создание и подготовка к работе цифрового объекта.
+        
         :param identifier: Уникальный идентификатор объекта
         :param name: Имя объекта
         :param version: Версия цифрового объекта
+        
         Примеры:
         >>> digital_entity = DigitalEntity(3, "Software", "v1.0")  # инициализация экземпляра класса
         """
@@ -112,8 +127,10 @@ class DigitalEntity(AbstractEntity):
     def update_version(self, new_version: str) -> None:
         """
         Обновление версии цифрового объекта.
+        
         :param new_version: Новая версия объекта
         :raise ValueError: Если новая версия объекта пуста, вызываем ошибку
+        
         Примеры:
         >>> digital_entity = DigitalEntity(3, "Software", "v1.0")
         >>> digital_entity.update_version("v2.0")
@@ -123,6 +140,7 @@ class DigitalEntity(AbstractEntity):
     def run_application(self) -> None:
         """
         Запуск цифрового приложения.
+        
         Примеры:
         >>> digital_entity = DigitalEntity(3, "Software", "v1.0")
         >>> digital_entity.run_application()
