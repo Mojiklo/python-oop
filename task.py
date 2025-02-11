@@ -25,6 +25,8 @@ class Animal:
         """Возвращает строку для создания объекта."""
         return f"{self.__class__.__name__}(name={self.name!r}, species={self.species!r}, age={self.age!r})"
 
+    def breathe(self) -> str:
+        return "Животное живо и дышит!"
 
 class Dog(Animal):
     """
@@ -36,7 +38,7 @@ class Dog(Animal):
         breed (str): Порода собаки.
     """
     def __init__(self, name: str, age: int, breed: str):
-        super().__init__(name, "собака", age)  # Используем конструктор базового класса Animal
+        super().__init__(name, "собака", age)
         self.breed = breed
 
     def make_sound(self) -> str:
@@ -50,6 +52,10 @@ class Dog(Animal):
     def __str__(self) -> str:
         """Расширяем метод __str__, добавляя информацию о породе."""
         return f"{super().__str__()}, порода: {self.breed}"
+
+    def __repr__(self) -> str:
+        """Возвращает строку для создания объекта Dog."""
+        return f"{self.__class__.__name__}(name={self.name!r}, age={self.age!r}, breed={self.breed!r})"
 
 
 class Bird(Animal):
@@ -80,3 +86,6 @@ class Bird(Animal):
         flight_ability = "может летать" if self.can_fly else "не может летать"
         return f"{super().__str__()}, {flight_ability}"
 
+    def __repr__(self) -> str:
+        """Возвращает строку для создания объекта Bird."""
+        return f"{self.__class__.__name__}(name={self.name!r}, age={self.age!r}, can_fly={self.can_fly!r})"
