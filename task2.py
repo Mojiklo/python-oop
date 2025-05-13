@@ -1,13 +1,9 @@
-
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from lab1.zad1.lab1_task1 import AbstractEntity, PhysicalObject, DigitalEntity
+from task_1 import AbstractEntity, PhysicalObject, DigitalEntity
 
 # Проверка создания объектов с неверными типами и значениями
 def test_invalid_inputs():
     print("Проверка создания AbstractEntity с неверными данными:")
-    tr:y
+    try:
         AbstractEntity("один", "Entity1")  # Неверный тип ID
     except TypeError as e:
         print(f"Ошибка: {e}")
